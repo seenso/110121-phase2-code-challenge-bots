@@ -2,13 +2,13 @@ import React from "react";
 import YourBotArmy from "./YourBotArmy";
 import BotCollection from "./BotCollection";
 
-function BotsPage() {
+function BotsPage({ bots }) {
   //start here with your code for step one
 
   return (
     <div>
       <YourBotArmy />
-      <BotCollection />
+      <BotCollection bots={bots}/>
     </div>
   )
 }
