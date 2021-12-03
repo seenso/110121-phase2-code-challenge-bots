@@ -12,9 +12,13 @@ function App() {
     .then(data => setBots(data))
   }, []);
 
+  function releaseBot(bot) {
+    setBots(bots.filter(b => b.id !== bot.id))
+  }
+
   return (
     <div className="App">
-      <BotsPage bots={bots}/>
+      <BotsPage bots={bots} releaseBot={releaseBot}/>
     </div>
   );
 }
