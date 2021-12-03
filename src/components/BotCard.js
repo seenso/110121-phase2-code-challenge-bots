@@ -47,9 +47,7 @@ function BotCard({ bot, handleClick, releaseBot }) {
             <div className="ui center aligned segment basic">
               <button
                 className="ui mini red button"
-                onClick={() =>
-                  releaseBot(bot)
-                }
+                onClick={(e) => releaseBot(e, bot)}
               >
                 x
               </button>
