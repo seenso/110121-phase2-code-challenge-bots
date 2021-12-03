@@ -7,9 +7,9 @@ function BotsPage({ bots, releaseBot }) {
   const [enlistedBots, setEnlistedBots] = useState([])
 
   function enlistBot(bot) {
-    // let enlistedBot = {...bot, enlisted: true}; //returns bot w "enlisted: true"
-    // setEnlsitedBots([...enlistedBots, enlistedBot]) //...enlistedBots is "not iterable" error
-    setEnlistedBots(bots.map(b => b.id === bot.id ? {...b, enlisted: true} : b));
+    let enlistedBot = {...bot, enlisted: true}; //returns bot w "enlisted: true"
+    setEnlistedBots([...enlistedBots, enlistedBot]) //...enlistedBots is "not iterable" error
+    // setEnlistedBots(bots.map(b => b.id === bot.id ? {...b, enlisted: true} : b));
     console.log("Enlisted Bots", enlistedBots.filter(b => b.enlisted));
     // console.log("ENLISTED BOTS after enlisting", bots.filter(b => b.enlisted))
   }
@@ -21,7 +21,7 @@ function BotsPage({ bots, releaseBot }) {
 
   return (
     <div>
-      <YourBotArmy enlistedBots={bots.filter(b => b.enlisted)} 
+      <YourBotArmy enlistedBots={enlistedBots.filter(b => b.enlisted)} 
                    dischargeBot={dischargeBot} 
                    releaseBot={releaseBot}/>   
       <BotCollection bots={bots} 

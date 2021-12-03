@@ -17,12 +17,11 @@ function App() {
 
     // below: core deliverables wanted a DELETE endpoint so I put it in App where I can use the fetch()
 
-    // fetch(api_url+"/:id", {
-    //   method: "DELETE",
-    //   body: {bot.id}
-    // })
-    // .then(r => r.json())
-    // .then(data => console.log("DELETE DATA", data))
+    fetch(api_url+"/"+bot.id, {
+      method: "DELETE"
+    })
+    .then(r => r.json())
+    .then(data => console.log("Robot Released!", data))
   }
 
   return (
