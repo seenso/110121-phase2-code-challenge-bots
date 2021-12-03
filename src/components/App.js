@@ -14,6 +14,15 @@ function App() {
 
   function releaseBot(bot) {
     setBots(bots.filter(b => b.id !== bot.id))
+
+    // below: core deliverables wanted a DELETE endpoint so I put it in App where I can use the fetch()
+
+    // fetch(api_url+"/:id", {
+    //   method: "DELETE",
+    //   body: {bot.id}
+    // })
+    // .then(r => r.json())
+    // .then(data => console.log("DELETE DATA", data))
   }
 
   return (
